@@ -2,11 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-
 import { Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
 const Header = () => {
+  const appStoreLink = 'https://apps.apple.com/us/app/rexchanger/id1449206825';
+  const googlePlayLink =
+    'https://play.google.com/store/apps/details?id=com.rexchanger.rexchangerapp';
+
   return (
     <StaticQuery
       query={graphql`
