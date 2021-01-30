@@ -2,27 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import platform from 'platform';
 
 import { Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
 const Header = () => {
-  const os = platform.os;
-  const isAndroid = os?.family === 'Android';
-  const isIphone = os?.family === 'iOS';
-  const isMobile = isAndroid || isIphone;
-
-  const appStoreLink = 'https://apps.apple.com/us/app/rexchanger/id1449206825';
-  const googlePlayLink =
-    'https://play.google.com/store/apps/details?id=com.rexchanger.rexchangerapp';
-  let appLink;
-  if (isIphone) {
-    appLink = appStoreLink;
-  } else if (isAndroid) {
-    appLink = googlePlayLink;
-  }
-
   return (
     <StaticQuery
       query={graphql`
@@ -56,23 +40,17 @@ const Header = () => {
                 </h1>
                 <br />
                 <p>
-                  {isMobile ? (
-                    <StyledExternalLink href={appLink}>
-                      Download the app &nbsp;&#x2794;
+                  <Text>
+                    Download now on{' '}
+                    <StyledExternalLink href={googlePlayLink}>
+                      Android
+                    </StyledExternalLink>{' '}
+                    and{' '}
+                    <StyledExternalLink href={appStoreLink}>
+                      iOS
                     </StyledExternalLink>
-                  ) : (
-                    <Text>
-                      Download now on{' '}
-                      <StyledExternalLink href={googlePlayLink}>
-                        Android
-                      </StyledExternalLink>{' '}
-                      and{' '}
-                      <StyledExternalLink href={appStoreLink}>
-                        iOS
-                      </StyledExternalLink>
-                      &nbsp;&#x2794;
-                    </Text>
-                  )}
+                    &nbsp;&#x2794;
+                  </Text>
                 </p>
               </Text>
             </Grid>
