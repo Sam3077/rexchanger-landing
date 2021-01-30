@@ -3,62 +3,48 @@ import React from 'react';
 import { Section, Container } from '@components/global';
 
 import FaqItem from '@common/FaqItem';
-import ExternalLink from '@common/ExternalLink';
 
 const FAQS = [
   {
-    title: 'What tech does Gatsby use?',
+    title: 'What is Rexchanger?',
     content: () => (
       <>
-        Enjoy the power of the latest web technologies – React.js , Webpack ,
-        modern JavaScript and CSS and more — all set up and waiting for you to
-        start building
+        Rexchanger is the go-to gear rental market. You can find whatever gear
+        you need for your next adventure. All our gear is listed by locals and
+        is much cheaper than going through a rental shop.
       </>
     ),
   },
   {
-    title: 'Where can you source data from?',
+    title: 'How do I rent gear on Rexchanger?',
     content: () => (
       <>
-        Gatsby’s rich data plugin ecosystem lets you build sites with the data
-        you want — from one or many sources: Pull data from headless CMSs, SaaS
-        services, APIs, databases, your file system, and more directly into your
-        pages using GraphQL.
+        Just download the app to become a Rexchanger Adventurer and get instant
+        access to our entire marketplace of gear rentals. Simply add a payment
+        method in the app and we'll take care of the rest! Payments are
+        automatically processed so you can focus on the adventure.
       </>
     ),
   },
   {
-    title: 'How do I scale Gatsby sites?',
+    title: 'How do I list my gear on Rexchanger?',
     content: () => (
       <>
-        Gatsby.js is Internet Scale. Forget complicated deploys with databases
-        and servers and their expensive, time-consuming setup costs,
-        maintenance, and scaling fears. Gatsby.js builds your site as “static”
-        files which can be deployed easily on dozens of services.
+        All rentals are listed through our convenient mobile app. Register
+        yourself as a Trailblazer, add listing details, set a daily price, and
+        wait for the Adventurers to come to you! Payments are automatically
+        depositted into your Rexchanger account and you can transfer them to
+        your bank account at any time.
       </>
     ),
   },
   {
-    title: 'How does do I future-proof my website?',
+    title: 'How do I know my gear is safe?',
     content: () => (
       <>
-        Do not build a website with last decade’s tech. The future of the web is
-        mobile, JavaScript and APIs—the{` `}
-        <ExternalLink href="https://jamstack.org/">JAMstack</ExternalLink>.
-        Every website is a web app and every web app is a website. Gatsby.js is
-        the universal JavaScript framework you’ve been waiting for.
-      </>
-    ),
-  },
-  {
-    title: 'What exactly does Gatsby build?',
-    content: () => (
-      <>
-        Gatsby.js is a static PWA (Progressive Web App) generator. You get code
-        and data splitting out-of-the-box. Gatsby loads only the critical HTML,
-        CSS, data, and JavaScript so your site loads as fast as possible. Once
-        loaded, Gatsby prefetches resources for other pages so clicking around
-        the site feels incredibly fast.
+        We track the condition of your gear from start to finish of the rental.
+        We also offer an optional Rexprotect policy that covers your gear from
+        damages.
       </>
     ),
   },

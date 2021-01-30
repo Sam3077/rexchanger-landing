@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Scrollspy from 'react-scrollspy';
+import AltIcon from '@static/icons/alticon.svg';
+import ExternalLink from '@common/ExternalLink';
 
 import { Container } from '@components/global';
 import {
@@ -15,7 +17,7 @@ import {
 
 import { ReactComponent as MenuIcon } from '@static/icons/menu.svg';
 
-const NAV_ITEMS = ['About', 'Brands', 'Team', 'FAQ'];
+const NAV_ITEMS = ['About', 'Gear', 'FAQ', 'Blog'];
 
 class Navbar extends Component {
   state = {
@@ -32,11 +34,26 @@ class Navbar extends Component {
     }
   };
 
-  getNavAnchorLink = item => (
-    <AnchorLink href={`#${item.toLowerCase()}`} onClick={this.closeMobileMenu}>
-      {item}
-    </AnchorLink>
-  );
+  getNavAnchorLink = item => {
+    if (item === 'Blog') {
+      return (
+        <ExternalLink
+          onClick={this.closeMobileMenu}
+          href="https://medium.com/rexchanger"
+        >
+          {item}
+        </ExternalLink>
+      );
+    }
+    return (
+      <AnchorLink
+        href={`#${item.toLowerCase()}`}
+        onClick={this.closeMobileMenu}
+      >
+        {item}
+      </AnchorLink>
+    );
+  };
 
   getNavList = ({ mobile = false }) => (
     <NavListWrapper mobile={mobile}>
@@ -44,7 +61,7 @@ class Navbar extends Component {
         items={NAV_ITEMS.map(item => item.toLowerCase())}
         currentClassName="active"
         mobile={mobile}
-        offset={-64}
+        offset={-50}
       >
         {NAV_ITEMS.map(navItem => (
           <NavItem key={navItem}>{this.getNavAnchorLink(navItem)}</NavItem>
@@ -59,7 +76,7 @@ class Navbar extends Component {
     return (
       <Nav {...this.props}>
         <StyledContainer>
-          <Brand>Absurd</Brand>
+          <Brand src={AltIcon} />
           <Mobile>
             <button onClick={this.toggleMobileMenu} style={{ color: 'black' }}>
               <MenuIcon />

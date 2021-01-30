@@ -9,31 +9,31 @@ const About = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_fast: file(
+        art_bike: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
+          name: { eq: "mountain_bike" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 760) {
+            fluid(maxHeight: 750) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }
 
-        art_learn: file(
+        art_chill: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "learn_yourself" }
+          name: { eq: "hammock" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 760) {
+            fluid(maxHeight: 750) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }
 
-        art_ideas: file(
+        art_share: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "ideas" }
+          name: { eq: "share" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -48,44 +48,54 @@ const About = () => (
         <Container>
           <Grid>
             <div>
-              <h2>Speed past the competition</h2>
+              <h2>You don’t have to buy the gear to have the adventure</h2>
               <p>
-                Gatsby.js builds the fastest possible website. Instead of
-                waiting to generate pages when requested, pre-build pages and
-                lift them into a global cloud of servers — ready to be delivered
-                instantly to your users wherever they are.
+                Whether you're trying a new sport or getting back to an old
+                favorite, Rexchanger's got you covered. Find gear to support
+                your next outting for much cheaper than any rental shops.
               </p>
             </div>
             <Art>
-              <Img fluid={data.art_fast.childImageSharp.fluid} />
+              <Img
+                fadeIn={true}
+                imgStyle={{ maxHeight: 500 }}
+                fluid={data.art_bike.childImageSharp.fluid}
+              />
             </Art>
           </Grid>
           <Grid inverse>
             <Art>
-              <Img fluid={data.art_learn.childImageSharp.fluid} />
+              <Img
+                fadeIn={true}
+                imgStyle={{ maxHeight: 500 }}
+                fluid={data.art_chill.childImageSharp.fluid}
+              />
             </Art>
             <div>
-              <h2>Nothing new to learn here</h2>
+              <h2>Travel light, but don’t miss out on an adventure</h2>
               <p>
-                Enjoy the power of the latest web technologies – React.js ,
-                Webpack , modern JavaScript and CSS and more — all set up and
-                waiting for you to start building.
+                With listings all over the world you can eave your bigger items
+                at home and rent top quality gear no matter where you go. Local
+                Trailblazers are always available to rent their gear and give
+                you tips about the area.
               </p>
             </div>
           </Grid>
           <Grid>
             <div>
-              <h2>Grow and build your ideas</h2>
+              <h2>Share the adventure and earn money</h2>
               <p>
-                Waste no more time on tooling and performance. Focus on the the
-                site you want to build and nothing more.
-                <br />
-                <br />
-                Gatsby is fast in every way that matters.
+                If you can’t use it, somebody should… and you should make some
+                extra cash in the process. Help others discover your favorite
+                sport and make some cash on the gear in your garage.
               </p>
             </div>
             <Art>
-              <Img fluid={data.art_ideas.childImageSharp.fluid} />
+              <Img
+                fadeIn={true}
+                imgStyle={{ maxHeight: 500 }}
+                fluid={data.art_share.childImageSharp.fluid}
+              />
             </Art>
           </Grid>
         </Container>
@@ -136,6 +146,7 @@ const Grid = styled.div`
 const Art = styled.figure`
   margin: 0;
   max-width: 380px;
+  max-height: 500px;
   width: 100%;
 `;
 

@@ -2,13 +2,25 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 const SEO_DATA = {
-  description: 'An absurd gatsby starter',
-  title: 'Absurd',
-  url: '',
-  author: 'ajayns',
-  keywords: ['gatsby', 'site', 'absurd'],
-  img: '',
-  twitterId: '@ajayns_',
+  description: 'Rent outdoor gear and equipment and make money off your gear',
+  title: 'Rexchanger | Your door to the outdoors',
+  url: 'rexchanger.com',
+  author: 'Sam3077',
+  keywords: [
+    'gatsby',
+    'site',
+    'rexchanger',
+    'gear',
+    'outdoor',
+    'peer-to-peer',
+    'marketplace',
+    'camping',
+    'hiking',
+    'skis',
+    'snowboard',
+  ],
+  img: 'static/icons/tallicon.svg',
+  twitterId: '',
   facebookId: '',
 };
 

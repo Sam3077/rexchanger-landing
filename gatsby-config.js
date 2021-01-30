@@ -33,11 +33,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Absurd`,
-        short_name: `absurd`,
+        name: `Rexchange | Your door to the outdoors`,
+        short_name: `Rexchanger`,
         start_url: `/`,
-        background_color: `#8bd8ed`,
-        theme_color: `#8bd8ed`,
+        background_color: `#FFFFFF`,
+        theme_color: `#77B983`,
         display: `minimal-ui`,
         icon: `static/favicon.svg`,
       },
@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`average`, `prata\:400,700`],
+        fonts: [`montserrat regular\:400`, `karla light\:300`],
       },
     },
     {

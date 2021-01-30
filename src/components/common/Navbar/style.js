@@ -4,11 +4,14 @@ import { Container } from '@components/global';
 
 export const Nav = styled.nav`
   padding: 16px 0;
-  background-color: ${props => props.theme.color.primary};
+  background-color: ${props => props.theme.color.white.light};
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
+  filter: drop-shadow(
+    5px 0px 0.75rem ${props => props.theme.color.black.regular}
+  );
 `;
 
 export const StyledContainer = styled(Container)`
@@ -59,12 +62,12 @@ export const NavItem = styled.li`
 
 export const MobileMenu = styled.div`
   width: 100%;
-  background: ${props => props.theme.color.primary};
+  background: ${props => props.theme.color.white.light};
 `;
 
-export const Brand = styled.div`
-  font-family: ${props => props.theme.font.primary};
-  ${props => props.theme.font_size.large};
+export const Brand = styled.img`
+  width: 50%;
+  max-height: 50px;
 `;
 
 export const Mobile = styled.div`

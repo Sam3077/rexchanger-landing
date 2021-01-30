@@ -2,54 +2,86 @@ import React from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import platform from 'platform';
 
 import { Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
 
-const Header = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        art_build: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "build" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 1400) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+const Header = () => {
+  const os = platform.os;
+  const isAndroid = os?.family === 'Android';
+  const isIphone = os?.family === 'iOS';
+  const isMobile = isAndroid || isIphone;
+
+  const appStoreLink = 'https://apps.apple.com/us/app/rexchanger/id1449206825';
+  const googlePlayLink =
+    'https://play.google.com/store/apps/details?id=com.rexchanger.rexchangerapp';
+  let appLink;
+  if (isIphone) {
+    appLink = appStoreLink;
+  } else if (isAndroid) {
+    appLink = googlePlayLink;
+  }
+
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          art_build: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "tent_door" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 1200) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
         }
-      }
-    `}
-    render={data => (
-      <HeaderWrapper>
-        <Container>
-          <Grid>
-            <Art>
-              <Img fluid={data.art_build.childImageSharp.fluid} />
-            </Art>
-            <Text>
-              <h1>
-                Fast in
+      `}
+      render={data => (
+        <HeaderWrapper>
+          <Container>
+            <Grid>
+              <Art>
+                <Img fluid={data.art_build.childImageSharp.fluid} />
+              </Art>
+              <Text>
+                <h1>
+                  Your
+                  <br />
+                  door to
+                  <br />
+                  the outdoors
+                </h1>
                 <br />
-                every way
-                <br />
-                that matters
-              </h1>
-              <br />
-              <p>
-                <StyledExternalLink href="https://github.com/ajayns/gatsby-absurd">
-                  Check out source &nbsp;&#x2794;
-                </StyledExternalLink>
-              </p>
-            </Text>
-          </Grid>
-        </Container>
-      </HeaderWrapper>
-    )}
-  />
-);
+                <p>
+                  {isMobile ? (
+                    <StyledExternalLink href={appLink}>
+                      Download the app &nbsp;&#x2794;
+                    </StyledExternalLink>
+                  ) : (
+                    <Text>
+                      Download now on{' '}
+                      <StyledExternalLink href={googlePlayLink}>
+                        Android
+                      </StyledExternalLink>{' '}
+                      and{' '}
+                      <StyledExternalLink href={appStoreLink}>
+                        iOS
+                      </StyledExternalLink>
+                      &nbsp;&#x2794;
+                    </Text>
+                  )}
+                </p>
+              </Text>
+            </Grid>
+          </Container>
+        </HeaderWrapper>
+      )}
+    />
+  );
+};
 
 const HeaderWrapper = styled.header`
   background-color: ${props => props.theme.color.primary};
@@ -61,12 +93,15 @@ const HeaderWrapper = styled.header`
 `;
 
 const Art = styled.figure`
-  width: 100%;
+  width: 90%;
   margin: 0;
 
   > div {
     width: 120%;
     margin-bottom: -4.5%;
+    filter: drop-shadow(
+      5px 5px 0.75rem ${props => props.theme.color.black.regular}
+    );
 
     @media (max-width: ${props => props.theme.screen.md}) {
       width: 100%;
@@ -100,7 +135,7 @@ const Text = styled.div`
 
 const StyledExternalLink = styled(ExternalLink)`
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
 
   &:hover {
     color: ${props => props.theme.color.black.regular};
