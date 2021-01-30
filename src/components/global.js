@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-global.window = {};
+global.isServer = typeof window === 'undefined';
 export const Container = styled.div`
   max-width: 1200px;
   width: 100%;
