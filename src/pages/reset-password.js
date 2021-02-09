@@ -8,8 +8,10 @@ import Navbar from '@common/Navbar';
 import * as querystring from 'querystring';
 import { request } from 'http';
 
-const API_BASE = 'localhost';
-const PORT = 8000;
+// const API_BASE = 'localhost';
+const API_BASE = 'api.rexchanger.com';
+const PORT = 443;
+// const PORT = 8000;
 const ResetPassword = props => {
   const [valid, setValid] = useState(null);
   const [passwordError, setPasswordError] = useState(null);
