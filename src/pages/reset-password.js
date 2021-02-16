@@ -9,8 +9,8 @@ import * as querystring from 'querystring';
 import { request } from 'http';
 
 // const API_BASE = 'localhost';
-const API_BASE = 'api.rexchanger.com';
-const PORT = 443;
+const API_BASE = 'dev.rexchanger.com';
+const PORT = 8000;
 // const PORT = 8000;
 const ResetPassword = props => {
   const [valid, setValid] = useState(null);
