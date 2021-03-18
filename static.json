@@ -28,9 +28,10 @@
       "url": "/privacy-policy.pdf",
       "status": 302
     },
-    "/refer/*": {
+    "/refer/(.*)": {
       "url": "/",
-      "status": 302
+      "status": 302,
+      "regex": true
     }
   }
 }
