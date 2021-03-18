@@ -21,14 +21,14 @@
   "error_page": "404.html",
   "redirects": {
     "/terms-of-use": {
-      "url": "/terms-of-user.pdf",
+      "url": "/terms-of-use.pdf",
       "status": 302
     },
     "/privacy-policy": {
       "url": "/privacy-policy.pdf",
       "status": 302
     },
-    "/refer/**": {
+    "/refer/*": {
       "url": "/",
       "status": 302
     }
