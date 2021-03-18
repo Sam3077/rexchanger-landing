@@ -1,20 +1,14 @@
-exports.createPages = async function({ actions, graphql }) {
+exports.createPages = async ({ graphql, actions }) => {
   actions.createRedirect({
-    fromPath: '/privacy-policy',
-    toPath: '/privacy-policy.pdf',
-    statusCode: 301,
-    force: true,
+    fromPath: `/privacy-policy`,
+    toPath: `/privacy-policy.pdf`,
   });
   actions.createRedirect({
-    fromPath: '/terms-of-use',
-    toPath: '/terms-of-use.pdf',
-    statusCode: 301,
-    force: true,
+    fromPath: `/terms-of-use`,
+    toPath: `/terms-of-use.pdf`,
   });
   actions.createRedirect({
-    fromPath: '/refer/*',
-    toPath: '/',
-    statusCode: 302,
-    force: true,
+    fromPath: `/refer/*`,
+    toPath: `/`,
   });
 };
