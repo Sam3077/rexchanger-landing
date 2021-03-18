@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "firebase-serve",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "public/**/.*"],
+    "appAssociation": "AUTO",
+    "rewrites": [
+      { "source": "/**", "dynamicLinks": true },
+      { "source": "/gear/**", "dynamicLinks": true }
+    ]
+  }
+}

@@ -1,6 +1,10 @@
 const path = require('path');
 
 module.exports = {
+  siteMetadata: {
+    title: 'Rexchanger',
+    siteUrl: 'https://www.rexchanger.com',
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
