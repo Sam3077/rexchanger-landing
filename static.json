@@ -18,7 +18,7 @@
     }
   },
   "https_only": true,
-  "error_page": "404.html",
+  "error_page": "index.html",
   "redirects": {
     "/terms-of-use": {
       "url": "/terms-of-use.pdf",
@@ -27,11 +27,6 @@
     "/privacy-policy": {
       "url": "/privacy-policy.pdf",
       "status": 302
-    },
-    "/refer/(.*)": {
-      "url": "/",
-      "status": 302,
-      "regex": true
     }
   }
 }
