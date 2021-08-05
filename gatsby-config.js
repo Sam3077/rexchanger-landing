@@ -6,6 +6,12 @@ module.exports = {
     siteUrl: 'https://www.rexchanger.com',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: '207626961291350',
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-svgr`,

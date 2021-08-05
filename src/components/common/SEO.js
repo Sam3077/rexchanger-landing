@@ -21,13 +21,18 @@ const SEO_DATA = {
   ],
   img: 'static/icons/tallicon.svg',
   twitterId: '',
-  facebookId: '',
+  facebookId: '172511664872347',
+  facebookVerificationId: 'yl2anq6hpsulexypyuh1uc5dvo62qa',
 };
 
 const SEO = () => {
   return (
     <Helmet>
       <meta property="fb:app_id" content={SEO_DATA.facebookId} />
+      <meta
+        name="facebook-domain-verification"
+        content="yl2anq6hpsulexypyuh1uc5dvo62qa"
+      />
       <meta property="og:title" content={SEO_DATA.title} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={SEO_DATA.url} />
